@@ -33,7 +33,7 @@ public class BallMvt : MonoBehaviour
     void Update()
     {
         float db = 20 * Mathf.Log10(Mathf.Abs(MicInput.MicLoudness));
-        Debug.Log("'Volume is :' " + db);
+        //Debug.Log("'Volume is :' " + db);
         if (db < 1 && db > -25f)
         {
             rb.AddForce(0, -(db/5) * SidewaysSpeed * Time.deltaTime,  30);
