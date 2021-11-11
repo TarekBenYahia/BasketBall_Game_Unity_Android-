@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner", "UnityEngine.TestRunner.csproj", "{D7CFCEB1-0EEC-FC81-9CA3-6C47DFE792C6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngine.UI.csproj", "{9004A3D0-CD3D-D7CA-3552-308AE11AF978}"
@@ -8,6 +8,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TextMeshPro", "Unity.TextMeshPro.csproj", "{32801CFE-45BD-261D-2514-6ABBA757B0B9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Timeline", "Unity.Timeline.csproj", "{2782619E-EC2B-64CD-ABFB-5C67649E9F28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{AE391213-8EDE-6E62-849F-48FDC314FCC9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEditor.TestRunner", "UnityEditor.TestRunner.csproj", "{E750E827-8D81-6E7F-E7B2-6DED08C34F06}"
 EndProject
@@ -49,6 +51,10 @@ Global
 		{2782619E-EC2B-64CD-ABFB-5C67649E9F28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2782619E-EC2B-64CD-ABFB-5C67649E9F28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2782619E-EC2B-64CD-ABFB-5C67649E9F28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE391213-8EDE-6E62-849F-48FDC314FCC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE391213-8EDE-6E62-849F-48FDC314FCC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE391213-8EDE-6E62-849F-48FDC314FCC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE391213-8EDE-6E62-849F-48FDC314FCC9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E750E827-8D81-6E7F-E7B2-6DED08C34F06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E750E827-8D81-6E7F-E7B2-6DED08C34F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E750E827-8D81-6E7F-E7B2-6DED08C34F06}.Release|Any CPU.ActiveCfg = Release|Any CPU

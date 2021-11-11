@@ -24,6 +24,10 @@ public class BallMvt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (SystemInfo.supportsGyroscope)
+        {
+            Input.gyro.enabled = true;
+        }
         rb = this.GetComponent<Rigidbody>();
 
        
@@ -36,9 +40,11 @@ public class BallMvt : MonoBehaviour
         //Debug.Log("'Volume is :' " + db);
         if (db < 1 && db > -25f)
         {
-            rb.AddForce(0, -(db/5) * SidewaysSpeed * Time.deltaTime,  30);
+            rb.AddForce(0, -(db/5) * SidewaysSpeed * Time.deltaTime,  25);
         }
-       
+
+        rb.AddForce(Input.acceleration.x * 3, 0, 0);
+        
     }
 
     void FixedUpdate()
@@ -51,6 +57,11 @@ public class BallMvt : MonoBehaviour
 
         
         rb.AddForce(0, Input.GetAxis("Vertical") * SidewaysSpeed * Time.deltaTime, Input.GetAxis("Vertical") * 30);
+    }
+
+    private Quaternion GyrosToUnity(Quaternion q)
+    {
+        return new Quaternion( q.x ,  q.y ,-q.z , -q.w);
 
     }
 

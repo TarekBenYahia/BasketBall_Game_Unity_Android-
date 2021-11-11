@@ -18,6 +18,7 @@ public class CollisionSounds : MonoBehaviour
 
     public GameObject ballon;
     public GameObject gameOver;
+    public GameObject pause;
 
     public GameObject HitObject;
     public GameObject PanelHitObject;
@@ -26,6 +27,8 @@ public class CollisionSounds : MonoBehaviour
     public GameObject PanelSoundObject;
     public GameObject WhistleSoundObject;
     public Text scoreText;
+    public Text bestScoreText;
+    private int bestScore=0;
     private int currentScore;
     private int a = 0;
     
@@ -36,6 +39,7 @@ public class CollisionSounds : MonoBehaviour
     {
         m = this.GetComponent<MeshRenderer>();
         currentScore = 0;
+        bestScoreText.text = "Best Score: " + PlayerPrefs.GetInt("Best Score");
     }
 
     // Update is called once per frame
@@ -44,10 +48,25 @@ public class CollisionSounds : MonoBehaviour
         
     }
 
+    public void DisplayPauseMenu()
+    {
+        pause.SetActive(true);
+    }
+
     private void HandleScore()
     {
         scoreText.text = "Score: " + currentScore;
+        if (currentScore > PlayerPrefs.GetInt("Best Score"))
+        {
+            bestScore = currentScore;
+            PlayerPrefs.SetInt("Best Score",bestScore);
+        }
+        bestScoreText.text = "Best Score: " + PlayerPrefs.GetInt("Best Score");
+
+
     }
+    
+  
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "panierBasket")
@@ -74,8 +93,15 @@ public class CollisionSounds : MonoBehaviour
             PanelHitObject.SetActive(true);
             PanelHit.Play();
         }
+
+        if (collision.collider.tag=="wall")
+        {
+            GroundHitObject.SetActive(true);
+            GroundHit.Play();
+        }
         if (collision.collider.tag == "ground")
         {
+            a = 0;
             GroundHitObject.SetActive(true);
             GroundHit.Play();
            

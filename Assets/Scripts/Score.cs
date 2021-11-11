@@ -7,6 +7,8 @@ public class Score : MonoBehaviour
 {
     public Text scoreText;
     private int currentScore;
+    public Text bestScoreText;
+    private int bestScore = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,7 @@ public class Score : MonoBehaviour
     }
     private void HandleScore()
     {
+        bestScoreText.text = "Best Score:" + bestScore;
         scoreText.text = "Score: " + currentScore;
     }
 
